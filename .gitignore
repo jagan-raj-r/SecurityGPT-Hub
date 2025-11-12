@@ -1,0 +1,71 @@
+# Security - NEVER commit sensitive data
+*.env
+.env.*
+secrets/
+credentials/
+*.key
+*.pem
+*.p12
+api-keys.txt
+config.local.*
+
+# Test data that might contain sensitive info
+test-data/
+sample-outputs/
+**/test-secrets/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+*.egg-info/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Logs
+*.log
+logs/
+*.out
+
+# Temporary files
+*.tmp
+*.bak
+*.cache
+temp/
+tmp/
+
+# Build outputs
+dist/
+build/
+
+# OS specific
+Thumbs.db
+desktop.ini
+
+# Private/local files
+*.local.*
+private/
+my-*.md
+
+# Review report (temporary)
+REVIEW-REPORT.md
+
