@@ -2,8 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GPTs](https://img.shields.io/badge/GPTs-3-blue)](#available-gpts)
-[![GitHub stars](https://img.shields.io/github/stars/YOUR-USERNAME/SecurityGPT-Hub?style=social)](https://github.com/YOUR-USERNAME/SecurityGPT-Hub)
-[![GitHub last commit](https://img.shields.io/github/last-commit/YOUR-USERNAME/SecurityGPT-Hub)](https://github.com/YOUR-USERNAME/SecurityGPT-Hub/commits)
+[![GitHub stars](https://img.shields.io/github/stars/jagan-raj-r/SecurityGPT-Hub?style=social)](https://github.com/jagan-raj-r/SecurityGPT-Hub)
+[![GitHub last commit](https://img.shields.io/github/last-commit/jagan-raj-r/SecurityGPT-Hub)](https://github.com/jagan-raj-r/SecurityGPT-Hub/commits)
 
 A collection of specialized AI assistants designed to automate security workflows, accelerate pentesting, and enhance code security reviews. 
 **Built by security pros, for security pros.**
