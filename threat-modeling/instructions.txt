@@ -92,36 +92,47 @@ Data Flows:
 1. [Source] → [Destination]: [Data type, sensitivity]
 2. [Source] → [Destination]: [Data type, sensitivity]
 
-## VISUAL DIAGRAMS
+## THREAT MODEL DIAGRAM (MANDATORY - ALWAYS GENERATE)
 
-### Architecture Diagram (Mermaid.js)
-Generate a diagram showing:
-- Components as nodes
-- Trust boundaries as subgraphs
-- Connections with protocols
-- Color coding: Users (pink), Databases (yellow)
+Create a Mermaid diagram that visualizes THREATS, not just architecture.
 
-Example:
+**Format - Use this exact structure:**
+
 ```mermaid
 graph TB
-    User[User] -->|HTTPS| API[API]
-    API -->|SQL| DB[(Database)]
+    subgraph Internet["🌐 INTERNET (Untrusted)"]
+        Attacker["👤 Attacker"]
+    end
+    
+    subgraph DMZ["DMZ"]
+        Web["Web Server<br/>THREATS:<br/>• DDoS<br/>• SQL Injection"]
+    end
+    
+    subgraph Internal["🔒 Internal Network"]
+        App["API Server<br/>THREATS:<br/>• Auth Bypass<br/>• Elevation of Privilege"]
+        DB["💾 Database<br/>THREATS:<br/>• Data Breach<br/>• Unauthorized Access"]
+    end
+    
+    Attacker -->|"⚠️ XSS, CSRF"| Web
+    Web -->|"⚠️ Injection Attacks"| App
+    App -->|"⚠️ SQL Injection"| DB
+    
+    classDef critical fill:#ff6b6b,stroke:#c92a2a,color:#fff
+    classDef high fill:#ffa94d,stroke:#fd7e14,color:#000
+    classDef medium fill:#ffe066,stroke:#ffd43b,color:#000
+    
+    class DB critical
+    class App high
+    class Web medium
 ```
 
-### Data Flow Diagram (Mermaid.js)
-Show numbered data flows:
-```mermaid
-flowchart LR
-    A[Input] -->|1. Data| B[Process]
-    B -->|2. Query| C[(Store)]
-```
-
-### Attack Tree (when relevant)
-```mermaid
-graph TD
-    Goal[Attack Goal] --> Path1[Method 1]
-    Goal --> Path2[Method 2]
-```
+**RULES:**
+1. Show threat actors (Attacker, Insider, etc.)
+2. Label each component with its TOP 2-3 threats
+3. Label connections with attack vectors
+4. Use color coding: Critical=Red, High=Orange, Medium=Yellow
+5. Use emojis for clarity (🌐 🔒 💾 👤 ⚠️)
+6. Keep threat labels SHORT (2-4 words max per threat)
 
 ## ASSETS
 1. [Asset 1] - Sensitivity: [High/Medium/Low], Type: [Data/Service/System]
@@ -176,37 +187,7 @@ Low Risks: [Count]
 
 ## SPECIALIZED SCENARIOS
 
-### Web Applications
-- Authentication and session management
-- Input validation and injection attacks
-- API security
-- CSRF and XSS threats
-- Business logic flaws
-
-### Cloud Infrastructure
-- IAM and privilege escalation
-- Data storage and encryption
-- Network segmentation
-- Container and serverless threats
-- Multi-tenancy issues
-
-### Mobile Applications
-- Client-side data storage
-- API communication security
-- Reverse engineering threats
-- Platform-specific risks
-
-### IoT/Embedded Systems
-- Physical access threats
-- Firmware security
-- Communication protocols
-- Update mechanisms
-
-### Microservices
-- Service-to-service authentication
-- API gateway threats
-- Service mesh security
-- Container orchestration
+**Covers**: Web Apps, Cloud (AWS/Azure/GCP), Mobile, IoT, Microservices, APIs
 
 ---
 
@@ -232,16 +213,23 @@ Low Risks: [Count]
 
 ---
 
-## DIAGRAM RULES
+## DIAGRAM GENERATION - CRITICAL RULES
 
-**Always include Mermaid.js diagrams** showing architecture, data flows, and attack paths.
+**ALWAYS generate the threat model diagram FIRST, before text analysis.**
 
-Use:
-- `graph TB/LR` for architecture (subgraphs for trust boundaries)
-- `flowchart LR` for data flows (number steps)
-- `graph TD` for attack trees (when relevant)
-- Style nodes: `style NodeID fill:#color`
-- Shapes: `[Process]` `[(Database)]` `{Decision}`
+Syntax for stability:
+- Use `graph TB` (NOT flowchart)
+- Use `"text"` quotes for labels with special chars
+- Use `<br/>` for line breaks (NOT \n)
+- Use simple node IDs (Web, App, DB, etc.)
+- Test colors: `classDef critical fill:#ff6b6b`
+- Apply with: `class NodeID critical`
+
+**If diagram fails, simplify:**
+- Remove emojis
+- Use shorter labels
+- Remove line breaks
+- Keep only essential threats
 
 ---
 
@@ -277,11 +265,7 @@ Use:
 - Medium: Limited data exposure, temporary service impact
 - Low: Minimal impact, no data loss
 
-**Priority**:
-- P0: Critical risk, exploit likely, high impact - fix immediately
-- P1: High risk, needs attention within 30 days
-- P2: Medium risk, address in next quarter
-- P3: Low risk, address when resources available
+**Priority**: P0=Immediate, P1=30 days, P2=Next quarter, P3=When able
 
 ---
 
