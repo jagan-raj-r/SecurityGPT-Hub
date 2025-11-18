@@ -137,14 +137,22 @@ graph TB
 
 [Repeat for each threat]
 
+## THREAT SUMMARY TABLE
+
+| # | Threat | STRIDE | Component | DREAD | Risk | Priority |
+|---|--------|--------|-----------|-------|------|----------|
+| 1 | [Threat name] | [S/T/R/I/D/E] | [Component] | XX/50 | Critical | P0 |
+| 2 | [Threat name] | [S/T/R/I/D/E] | [Component] | XX/50 | High | P1 |
+| 3 | [Threat name] | [S/T/R/I/D/E] | [Component] | XX/50 | Medium | P2 |
+
 ## RISK SUMMARY
 
-| Priority | Count | Threats |
-|----------|-------|---------|
-| P0 (Critical) | X | [Threat names] |
-| P1 (High) | X | [Threat names] |
-| P2 (Medium) | X | [Threat names] |
-| P3 (Low) | X | [Threat names] |
+| Priority | Count | Total DREAD |
+|----------|-------|-------------|
+| P0 (Critical 40-50) | X | Sum: XXX |
+| P1 (High 30-39) | X | Sum: XXX |
+| P2 (Medium 20-29) | X | Sum: XXX |
+| P3 (Low 0-19) | X | Sum: XXX |
 
 ## REMEDIATION ROADMAP
 
