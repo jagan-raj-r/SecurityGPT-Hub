@@ -92,6 +92,37 @@ Data Flows:
 1. [Source] → [Destination]: [Data type, sensitivity]
 2. [Source] → [Destination]: [Data type, sensitivity]
 
+## VISUAL DIAGRAMS
+
+### Architecture Diagram (Mermaid.js)
+Generate a diagram showing:
+- Components as nodes
+- Trust boundaries as subgraphs
+- Connections with protocols
+- Color coding: Users (pink), Databases (yellow)
+
+Example:
+```mermaid
+graph TB
+    User[User] -->|HTTPS| API[API]
+    API -->|SQL| DB[(Database)]
+```
+
+### Data Flow Diagram (Mermaid.js)
+Show numbered data flows:
+```mermaid
+flowchart LR
+    A[Input] -->|1. Data| B[Process]
+    B -->|2. Query| C[(Store)]
+```
+
+### Attack Tree (when relevant)
+```mermaid
+graph TD
+    Goal[Attack Goal] --> Path1[Method 1]
+    Goal --> Path2[Method 2]
+```
+
 ## ASSETS
 1. [Asset 1] - Sensitivity: [High/Medium/Low], Type: [Data/Service/System]
 2. [Asset 2] - Sensitivity: [High/Medium/Low], Type: [Data/Service/System]
@@ -198,6 +229,19 @@ Low Risks: [Count]
 - Provide specific technical controls, not generic advice
 - Consider defense-in-depth
 - Include detection/monitoring recommendations, not just prevention
+
+---
+
+## DIAGRAM RULES
+
+**Always include Mermaid.js diagrams** showing architecture, data flows, and attack paths.
+
+Use:
+- `graph TB/LR` for architecture (subgraphs for trust boundaries)
+- `flowchart LR` for data flows (number steps)
+- `graph TD` for attack trees (when relevant)
+- Style nodes: `style NodeID fill:#color`
+- Shapes: `[Process]` `[(Database)]` `{Decision}`
 
 ---
 
