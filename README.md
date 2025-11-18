@@ -1,7 +1,7 @@
 # SecurityGPT-Hub
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GPTs](https://img.shields.io/badge/GPTs-5-blue)](#available-gpts)
+[![GPTs](https://img.shields.io/badge/GPTs-6-blue)](#available-gpts)
 [![GitHub stars](https://img.shields.io/github/stars/jagan-raj-r/SecurityGPT-Hub?style=social)](https://github.com/jagan-raj-r/SecurityGPT-Hub)
 [![GitHub last commit](https://img.shields.io/github/last-commit/jagan-raj-r/SecurityGPT-Hub)](https://github.com/jagan-raj-r/SecurityGPT-Hub/commits)
 
@@ -36,6 +36,11 @@ Creates comprehensive threat models using STRIDE + DREAD scoring with visual thr
 Maps controls to frameworks (SOC 2, ISO 27001, PCI-DSS, HIPAA, GDPR), identifies gaps, and generates audit-ready documentation.
 
 **Setup:** [Instructions](./compliance/instructions.txt) | **Learn:** [Usage Guide](./compliance/usage-guide.md)
+
+### 6. CloudSecGPT - Cloud Security Assistant
+Identifies AWS, Azure, and GCP misconfigurations, reviews IAM policies, and secures infrastructure-as-code.
+
+**Setup:** [Instructions](./cloud-security/instructions.txt) | **Learn:** [Usage Guide](./cloud-security/usage-guide.md)
 
 ---
 
